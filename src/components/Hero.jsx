@@ -1,8 +1,9 @@
-import logo from "/logo1.svg";
 import { useGSAP } from "@gsap/react";
-import TechStack from "./TechStack";
 import { initHeroAnimations } from "../animations/animations.js";
 // import ParticlesBackground from "./ParticlesBackground";
+import { heroContent } from "../constant";
+import { services } from "../constant";
+import ServiceCarousel from "./ServiceCarousel";
 
 const Hero = () => {
   useGSAP(() => {
@@ -19,26 +20,34 @@ const Hero = () => {
 
       <div className="hero-space-top w-full h-16"></div>
       <div id="hero" className="w-full h-full mx-auto relative">
-        <div className="h-full flex-center flex-col relative z-2">
-          {/* Updated z-index to be higher than particles (z-1) */}
-          <div className="hero-content flex flex-col items-center justify-center gap-4 w-full px-4">
-            <img
-              id="hero"
-              src={logo}
-              alt="Logo"
-              className="w-[100vh] mx-auto max-sm:my-12 max-sm:w-full opacity-0 scale-0 lg:mb-0 -translate-x-96 mt-5 px-3 md:mb-10"
-            />
-            <span>
+        <div className="h-full flex items-center relative z-2">
+          <div className="w-full max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+            <div className="hero-content flex flex-col items-start justify-center gap-5 w-full">
               <h1
                 id="hero-text"
-                className="font-comfortaa ml-12 text-white font-bold lg:text-3xl text-center opacity-0 translate-y-[-9vh] translate-x-32 relative"
+                className="font-comfortaa text-white font-bold lg:text-4xl text-2xl text-left opacity-0 translate-y-[-9vh] translate-x-32 relative"
               >
-                Team Portfolio
+                {heroContent.heading}
               </h1>
-            </span>
-          </div>
-          <div className="tech-stack">
-            <TechStack />
+              <p className="font-prompt text-white/70 text-left text-base lg:text-lg">
+                {heroContent.intro}
+              </p>
+
+              <div className="flex flex-wrap gap-2">
+                {services.map((s) => (
+                  <span
+                    key={s.title}
+                    className="px-3 py-1 rounded-full bg-white/5 ring-1 ring-white/10 text-white/80 text-xs font-montserrat"
+                  >
+                    {s.shortTitle || s.title}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <div className="hero-carousel w-full">
+              <ServiceCarousel items={services} />
+            </div>
           </div>
         </div>
       </div>

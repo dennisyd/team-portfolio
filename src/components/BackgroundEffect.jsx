@@ -31,7 +31,7 @@ const BackgroundEffect = ({
 
   return (
     <div
-      className={`${getVariantClass()} absolute inset-0 overflow-hidden z-1`}
+      className={`${getVariantClass()} absolute inset-0 overflow-hidden -z-10 pointer-events-none`}
       style={{ opacity }}
     >
       {showCircles && (

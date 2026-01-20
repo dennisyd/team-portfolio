@@ -35,3 +35,68 @@
     opacity: 1;
   }
 }
+
+/* HERO CAROUSEL EFFECTS */
+@keyframes hero-kenburns {
+  0% {
+    transform: scale(1) translate3d(0, 0, 0);
+    filter: saturate(1);
+  }
+  100% {
+    transform: scale(1.08) translate3d(-1.5%, -1.5%, 0);
+    filter: saturate(1.15);
+  }
+}
+
+@keyframes hero-shimmer {
+  0% {
+    transform: translateX(-30%);
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.35;
+  }
+  100% {
+    transform: translateX(30%);
+    opacity: 0.2;
+  }
+}
+
+@keyframes hero-progress {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+.hero-kenburns {
+  animation: hero-kenburns 6.5s ease-out forwards;
+  will-change: transform, filter;
+}
+
+.hero-shimmer {
+  background: radial-gradient(
+    70% 70% at 20% 20%,
+    rgba(5, 165, 188, 0.18) 0%,
+    transparent 55%
+  );
+  animation: hero-shimmer 7s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.hero-progress {
+  animation-name: hero-progress;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-kenburns,
+  .hero-shimmer,
+  .hero-progress {
+    animation: none !important;
+  }
+}

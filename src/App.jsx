@@ -9,13 +9,11 @@ import Footer from "./components/Footer";
 
 function App() {
   return (
-    <main className="body relative">
+    <main className="relative bg-black text-white overflow-x-hidden">
       <NavBar />
       <div className="content-wrapper">
         <Hero />
         <div className="content-sections">
-          <div className="h-screen"></div>{" "}
-          {/* Spacer to push content below hero */}
           <About />
           <Members />
           <Projects />

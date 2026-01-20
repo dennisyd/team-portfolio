@@ -20,7 +20,7 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="w-screen overflow-hidden h-full bg-zinc-950 sm:py-10 py-10 sm:px-10 px-5 relative"
+      className="w-screen overflow-hidden h-full bg-zinc-950 sm:py-32 py-20 sm:px-10 px-5 relative z-10 content-section"
     >
       <BackgroundEffect
         variant="projects"
@@ -33,8 +33,8 @@ const Projects = () => {
       />
 
       {/* Title remains left-aligned */}
-      <h1 ref={headerRef} id="header" className="title mb-12">
-        Projects
+      <h1 ref={headerRef} className="title mb-12">
+        Case Studies
       </h1>
 
       <div className="flex justify-center">

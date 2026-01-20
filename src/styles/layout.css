@@ -12,6 +12,8 @@
 .content-sections {
   position: relative;
   z-index: 10;
+  padding-top: 100vh;
+  padding-top: 100svh;
 }
 
 .hero-space-top {
@@ -32,7 +34,7 @@ header {
 
 /* Title Styles */
 .title {
-  @apply font-comfortaa font-bold text-3xl lg:text-5xl md:text-4xl lg:mb-0 mb-5 -translate-x-56 opacity-0;
+  @apply font-comfortaa font-bold text-3xl lg:text-5xl md:text-4xl lg:mb-0 mb-5;
   background: linear-gradient(90deg, #0a1c2e 0%, #05a5bc 50%, #0f3a5f 100%);
   background-clip: text;
   -webkit-background-clip: text;
@@ -41,6 +43,10 @@ header {
   padding: 0.2em 0;
   position: relative;
   display: inline-block;
+}
+
+.title-animate {
+  @apply -translate-x-56 opacity-0;
 }
 
 .title::after {

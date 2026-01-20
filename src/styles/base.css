@@ -49,6 +49,7 @@ html {
 
 section {
   position: relative;
+  scroll-margin-top: 6rem;
 }
 
 /* Common Classes */

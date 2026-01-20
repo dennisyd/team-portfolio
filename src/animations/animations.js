@@ -21,7 +21,7 @@ export const initHeroAnimations = () => {
     });
 
     // Fade and scale hero elements as user scrolls down
-    gsap.to([".hero-content", ".tech-stack"], {
+    gsap.to([".hero-content", ".hero-carousel"], {
         scrollTrigger: {
             trigger: "body",
             start: "5% top",

@@ -1,22 +1,54 @@
-import React, { useRef } from "react";
+import { useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import { initContactAnimations } from "../animations/animations.js";
 import BackgroundEffect from "./BackgroundEffect";
+import { letsBuild } from "../constant";
+
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/mzddalre";
 
 const Contact = () => {
   const formRef = useRef(null);
   const headerRef = useRef(null);
+  const [status, setStatus] = useState({ type: "idle", message: "" });
 
   useGSAP(() => {
     const cleanup = initContactAnimations(formRef, headerRef);
     return cleanup;
   }, []);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // You could add form submission logic here (email service, etc.)
-    alert("Thank you for your message! We'll get back to you soon.");
-    e.target.reset();
+    setStatus({ type: "sending", message: "" });
+
+    try {
+      const formData = new FormData(e.target);
+
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        body: formData,
+        headers: { Accept: "application/json" },
+      });
+
+      if (response.ok) {
+        setStatus({
+          type: "success",
+          message: "Thanks — your message has been sent.",
+        });
+        e.target.reset();
+        return;
+      }
+
+      const data = await response.json().catch(() => null);
+      const errorMessage =
+        data?.errors?.[0]?.message ||
+        "Something went wrong. Please try again.";
+      setStatus({ type: "error", message: errorMessage });
+    } catch {
+      setStatus({
+        type: "error",
+        message: "Network error. Please try again.",
+      });
+    }
   };
 
   return (
@@ -36,61 +68,39 @@ const Contact = () => {
 
       <div className="max-w-4xl mx-auto">
         <h1 ref={headerRef} className="title">
-          Get In Touch
+          {letsBuild.title}
         </h1>
 
         <div className="mt-12 grid md:grid-cols-2 gap-12">
           <div className="contact-info">
             <div className="mb-8 opacity-0 contact-item">
-              <h3 className="text-xl font-montserrat font-semibold text-blue-400 mb-2">
-                Let's Connect
-              </h3>
-              <p className="text-gray-400">
-                Have a project in mind or just want to chat about tech? We'd
-                love to hear from you!
-              </p>
+              <p className="text-gray-400">{letsBuild.description}</p>
             </div>
 
             <div className="mb-8 opacity-0 contact-item">
               <h3 className="text-xl font-montserrat font-semibold text-blue-400 mb-2">
-                Email Us
+                {letsBuild.contactTitle}
               </h3>
-              <a
-                href="mailto:goodshot.team@example.com"
-                className="text-gray-400 hover:text-blue-400 transition-colors"
-              >
-                ic.rexsymond.barba@cvsu.edu.ph
-              </a>
-            </div>
-
-            <div className="mb-8 opacity-0 contact-item">
-              <h3 className="text-xl font-montserrat font-semibold text-blue-400 mb-2">
-                Visit us on Github
-              </h3>
-              <div className="flex gap-4">
-                <a
-                  href="https://github.com/04Sai/TeamPortfolio"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-blue-400 transition-colors"
-                >
-                  GitHub
-                </a>
-                {/* <a
-                  href="https://facebook.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-blue-400 transition-colors"
-                >
-                  Facebook
-                </a> */}
-              </div>
+              <ul className="space-y-2 text-gray-400">
+                <li>{letsBuild.location}</li>
+                <li>{letsBuild.phone}</li>
+                <li>
+                  <a
+                    href={`mailto:${letsBuild.email}`}
+                    className="hover:text-blue-400 transition-colors"
+                  >
+                    {letsBuild.email}
+                  </a>
+                </li>
+              </ul>
             </div>
           </div>
 
           <form
             ref={formRef}
             onSubmit={handleSubmit}
+            action={FORMSPREE_ENDPOINT}
+            method="POST"
             className="contact-form opacity-0 transform translate-y-12"
           >
             <div className="mb-4">
@@ -146,10 +156,22 @@ const Contact = () => {
 
             <button
               type="submit"
+              disabled={status.type === "sending"}
               className="w-full py-3 px-6 bg-gradient-to-r from-blue-800 to-blue-600 text-white font-bold rounded-lg hover:from-blue-700 hover:to-blue-500 transition-colors duration-300"
             >
-              Send Message
+              {status.type === "sending" ? "Sending..." : "Send Message"}
             </button>
+
+            {status.type !== "idle" && status.message && (
+              <p
+                className={`mt-4 text-sm font-montserrat ${
+                  status.type === "success" ? "text-green-400" : "text-red-400"
+                }`}
+                aria-live="polite"
+              >
+                {status.message}
+              </p>
+            )}
           </form>
         </div>
       </div>
