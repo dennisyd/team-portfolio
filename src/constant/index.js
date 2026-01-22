@@ -1,28 +1,33 @@
 export const navItems = [
   { id: "home", label: "Home" },
-  { id: "about", label: "Services" },
+  { id: "about", label: "Solutions" },
   { id: "members", label: "About" },
-  { id: "projects", label: "Work" },
-  { id: "contact", label: "Contact" },
+  { id: "projects", label: "Case Studies" },
+  { id: "contact", label: "Talk to Us" },
 ];
 
 export const heroContent = {
-  heading: "EXPERT WEB, DATA, AI, AND BLOCKCHAIN SOLUTIONS",
-  subheading: "Engineering Scalable Systems That Drive Real Business Outcomes",
+  heading: "We turn complex ideas into reliable, production-ready systems.",
+  subheading:
+    "From MVPs that need to scale to legacy platforms that need modernization, we help teams build software that actually holds up in the real world.",
   intro:
-    "We build robust, scalable, and secure digital solutions for startups and established businesses that need more than just code. From full-stack web platforms to advanced data engineering, AI systems, automation, and blockchain infrastructure, we help organizations turn complex requirements into reliable production systems.",
-  cta: "CONTACT US",
+    "We help teams solve hard technical problems and turn them into systems they can rely on.",
+  cta: "Talk through your project →",
 };
 
 export const services = [
   {
-    title: "FULL-STACK WEB DEVELOPMENT",
-    shortTitle: "Web",
+    title: "Your product doesn’t scale the way you expected",
+    shortTitle: "Scale",
     image:
       "/hero/Custom-Web-Development-Boost-Sales-SignitySolutions-1-1024x512-1.webp",
     description:
-      "We design and build high-performance web applications tailored to your business needs. Our full-stack expertise ensures that systems are scalable, secure, and maintainable from frontend to backend.",
-    capabilitiesLabel: "Capabilities:",
+      "We help teams refactor, modernize, and stabilize existing web applications so they perform reliably as usage grows — without risky rewrites.",
+    outcome:
+      "Faster performance, fewer outages, and systems that are easier to maintain.",
+    how:
+      "Full-stack architecture, backend optimization, and cloud-ready deployment patterns.",
+    capabilitiesLabel: "How we build:",
     capabilities: [
       "Custom web application development",
       "REST and GraphQL APIs",
@@ -32,15 +37,17 @@ export const services = [
       "Cloud-ready, scalable architectures",
     ],
     closing:
-      "We focus on clean architecture, performance, and long-term maintainability.",
+      "We prioritize clean architecture, performance, security, and long-term maintainability.",
   },
   {
-    title: "DATA & AI ENGINEERING",
-    shortTitle: "Data & AI",
+    title: "You want AI, but need something practical",
+    shortTitle: "AI",
     image: "/hero/data and ai.jpg",
     description:
-      "We help organizations unlock the value of their data through intelligent systems, automation, and analytics. Our solutions integrate seamlessly into existing workflows while delivering measurable efficiency gains.",
-    capabilitiesLabel: "Capabilities:",
+      "We design and integrate AI features that solve real business problems — like search, Q&A, automation, and decision support — using OpenAI and your existing data.",
+    outcome: "Measurable efficiency gains, not demos.",
+    how: "OpenAI APIs, secure data pipelines, and production deployment.",
+    capabilitiesLabel: "How we build:",
     capabilities: [
       "Data pipelines and ETL systems",
       "Machine learning and predictive analytics",
@@ -49,15 +56,17 @@ export const services = [
       "Natural language querying of databases",
       "AI model integration with business applications",
     ],
-    closing: "Our AI systems are practical, explainable, and production-ready.",
+    closing: "AI is only mentioned after the solution is clear; then we build it to production standards.",
   },
   {
-    title: "AUTOMATION & WEB SCRAPING",
+    title: "Too much work is still manual",
     shortTitle: "Automation",
     image: "/hero/image00-4.png",
     description:
-      "We specialize in building reliable automation systems that eliminate repetitive manual work and deliver accurate, structured data at scale.",
-    capabilitiesLabel: "Capabilities:",
+      "We automate workflows that cost time and introduce errors, connecting systems and data so teams can focus on higher-value work.",
+    outcome: "Fewer handoffs, faster execution, fewer errors.",
+    how: "Backend automation, APIs, integrations, and monitored schedules.",
+    capabilitiesLabel: "How we build:",
     capabilities: [
       "Web scraping across complex and dynamic websites",
       "Multi-source data aggregation",
@@ -66,15 +75,17 @@ export const services = [
       "Scheduled and monitored extraction workflows",
     ],
     closing:
-      "All automation solutions are built with compliance, stability, and scalability in mind.",
+      "Automation is built with compliance, stability, monitoring, and scalability in mind.",
   },
   {
-    title: "BLOCKCHAIN SOLUTIONS",
+    title: "You need blockchain to work in the real world",
     shortTitle: "Blockchain",
     image: "/hero/Blockchain-1024x724-1.jpg",
     description:
-      "We deliver secure and efficient blockchain systems for businesses exploring decentralized technologies and digital assets.",
-    capabilitiesLabel: "Capabilities:",
+      "We deliver secure and efficient blockchain systems for businesses exploring decentralized technologies and digital assets — aligned with real business objectives.",
+    outcome: "Secure transactions, clear architecture decisions, and reliable deployments.",
+    how: "Smart contracts, DApps, and secure transaction/data integrity patterns.",
+    capabilitiesLabel: "How we build:",
     capabilities: [
       "Smart contract development",
       "Decentralized application (DApp) development",
@@ -82,8 +93,7 @@ export const services = [
       "Blockchain architecture and consulting",
       "Secure transaction and data integrity solutions",
     ],
-    closing:
-      "Our focus is on real-world blockchain use cases aligned with business objectives.",
+    closing: "We focus on real-world use cases, security, and efficient execution.",
   },
 ];
 

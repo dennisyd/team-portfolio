@@ -27,7 +27,7 @@ const AboutUs = () => {
       />
 
       <h1 id="header" className="title title-animate">
-        What We Do
+        What We Solve
       </h1>
 
       <div className="max-w-6xl mx-auto mt-10 grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -59,6 +59,24 @@ const AboutUs = () => {
             <p className="font-prompt text-white/70 text-lg mb-6 para">
               {service.description}
             </p>
+
+            {service.outcome && (
+              <div className="mb-6">
+                <p className="text-white font-montserrat font-semibold mb-1">
+                  Outcome:
+                </p>
+                <p className="font-prompt text-white/70">{service.outcome}</p>
+              </div>
+            )}
+
+            {service.how && (
+              <div className="mb-6">
+                <p className="text-white font-montserrat font-semibold mb-1">
+                  How:
+                </p>
+                <p className="font-prompt text-white/70">{service.how}</p>
+              </div>
+            )}
 
             <h3 className="text-lg font-montserrat font-semibold text-blue-400 mb-3">
               {service.capabilitiesLabel}
