@@ -100,7 +100,7 @@ const NavBar = () => {
           <img
             src={safeAssetUrl("/yddconsulting logo.png")}
             alt="YDD Consulting"
-            className="h-8 w-8 rounded bg-white/5 object-contain p-1 ring-1 ring-white/10"
+            className="h-8 sm:h-10 w-auto max-w-[140px] sm:max-w-[240px] object-contain drop-shadow-[0_8px_24px_rgba(0,0,0,0.35)]"
             loading="eager"
           />
         </button>

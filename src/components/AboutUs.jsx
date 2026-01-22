@@ -94,6 +94,25 @@ const AboutUs = () => {
             </p>
           </div>
         ))}
+
+        <div className="md:col-span-2 rounded-2xl border border-zinc-800 bg-black/40 backdrop-blur-sm p-6">
+          <h2 className="text-2xl font-montserrat font-bold text-white mb-6">
+            {businessApplications.title}
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {businessApplications.items.map((item) => (
+              <div
+                key={item.title}
+                className="rounded-xl border border-zinc-800 bg-zinc-950/60 p-5"
+              >
+                <h3 className="text-lg font-montserrat font-bold text-cyan-400 mb-3">
+                  {item.title}
+                </h3>
+                <p className="font-prompt text-white/70">{item.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
