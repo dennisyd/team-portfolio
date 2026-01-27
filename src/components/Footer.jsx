@@ -12,9 +12,9 @@ const Footer = () => {
           <div className="md:col-span-1">
             <div className="flex items-center gap-3 mb-4">
               <img
-                src={safeAssetUrl("/yddconsulting logo.png")}
+                src={safeAssetUrl("/yddconsulting-logo.png")}
                 alt="YDD Consulting"
-                className="h-10 sm:h-12 w-auto max-w-[240px] object-contain drop-shadow-[0_8px_24px_rgba(0,0,0,0.35)]"
+                className="h-14 sm:h-16 md:h-20 w-auto max-w-[420px] object-contain drop-shadow-[0_8px_24px_rgba(0,0,0,0.35)]"
                 loading="lazy"
               />
             </div>
