@@ -139,11 +139,6 @@ export const teamMembers = [
     image: "/profile/yancy dennis.png",
   },
   {
-    name: "Benjamin Tan",
-    role: "Full Stack Engineer",
-    image: "/profile/benjamin tan.jpg",
-  },
-  {
     name: "Philip Berry",
     role: "Salesforce Expert",
     image: "/profile/Philip Berry.jpg",
@@ -256,30 +251,6 @@ export const projectsData = [
       "Empowered non-technical teams to self-serve analytics",
       "Reduced dependency on data engineers",
       "Faster, data-driven decision-making",
-    ],
-  },
-  {
-    id: 4,
-    name: "Capture411 – Bid Intelligence & Document Platform",
-    industry: "GovTech / Procurement Intelligence",
-    image: "/projects/capture411.png",
-    challenge:
-      "Government solicitation data existed primarily as unstructured PDF documents, making discovery and analysis difficult.",
-    solution:
-      "Engineered the full-stack platform and backend pipelines to ingest, scan, and normalize large volumes of government bid documents using automated PDF processing.",
-    technologies: [
-      "React.js",
-      "Next.js",
-      "Node.js",
-      "PostgreSQL",
-      "AWS DevOps/Cloud",
-      "AWS Textract",
-      "automated PDF scanning",
-    ],
-    results: [
-      "Centralized and searchable solicitation database",
-      "Faster identification of relevant bid opportunities",
-      "Scalable cloud-based architecture for growth",
     ],
   },
   {
