@@ -42,11 +42,11 @@ const Members = () => {
                   key={member.name}
                   className="group rounded-xl border border-zinc-800 bg-zinc-950/60 p-5 hover:bg-zinc-900/60 transition-colors"
                 >
-                  <div className="flex items-center justify-center">
+                  <div className="aspect-square w-full overflow-hidden rounded-xl bg-black">
                     <img
                       src={safeAssetUrl(member.image)}
                       alt={member.name}
-                      className="h-full w-full rounded-xl object-cover bg-black"
+                      className="h-full w-full object-cover"
                       loading="lazy"
                     />
                   </div>
