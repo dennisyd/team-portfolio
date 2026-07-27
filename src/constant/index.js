@@ -139,6 +139,11 @@ export const teamMembers = [
     image: "/profile/yancy dennis.png",
   },
   {
+    name: "Martine Dennis",
+    role: "CFO & COO",
+    image: "/profile/yc-wife.jpg",
+  },
+  {
     name: "Philip Berry",
     role: "Salesforce Expert",
     image: "/profile/Philip Berry.jpg",
