@@ -154,6 +154,11 @@ export const teamMembers = [
     image: "/profile/benjamin tan.jpg",
   },
   {
+    name: "Bryan Green",
+    role: "Software Engineer",
+    image: "/profile/bryan.jpg",
+  },
+  {
     name: "Dylan Dennis",
     role: "Jr. Data Analyst",
     image: "/profile/Dylan Dennis.jpg",
