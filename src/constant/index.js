@@ -149,9 +149,9 @@ export const teamMembers = [
     image: "/profile/Philip Berry.jpg",
   },
   {
-    name: "Jacqueline Lai",
-    role: "Web Developer",
-    image: "/profile/JACQUELINE LAI.png",
+    name: "Benjamin Tan",
+    role: "Senior Full Stack Engineer",
+    image: "/profile/benjamin tan.jpg",
   },
   {
     name: "Dylan Dennis",
